@@ -1,0 +1,72 @@
+
+
+Thu Oct 10 17:37:20 2019
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 5.0.0-31-generic (#33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019) x86_64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       234441648 sectors
+/dev/sda: user_max   234441648 sectors
+/dev/sda: native_max 234441648 sectors
+/dev/sdb: LBA, HPA, LBA48, DCO support
+/dev/sdb: size       3907029168 sectors
+/dev/sdb: user_max   3907029168 sectors
+/dev/sdb: native_max 3907029168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 120 GB / 111 GiB - CHS 14593 255 63, sector size=512 - KINGSTON SA400S37120G, S/N:50026B778280D782, FW:SBFKB1D1
+Disk /dev/sdb - 2000 GB / 1863 GiB - CHS 243201 255 63, sector size=512 - TOSHIBA DT01ACA200, S/N:886LZP8AS, FW:MX4OABB0
+Disk /dev/sdc - 320 GB / 298 GiB - CHS 38913 255 63, sector size=512 - Toshiba External USB HDD, FW:1.03
+
+Partition table type (auto): Intel
+Disk /dev/sdc - 320 GB / 298 GiB - Toshiba External USB HDD
+Partition table type: Intel
+
+Analyse Disk /dev/sdc - 320 GB / 298 GiB - CHS 38913 255 63
+Geometry from i386 MBR: head=255 sector=63
+NTFS at 0/1/1
+get_geometry_from_list_part_aux head=255 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=1
+get_geometry_from_list_part_aux head=16 nbr=1
+get_geometry_from_list_part_aux head=32 nbr=1
+get_geometry_from_list_part_aux head=64 nbr=1
+get_geometry_from_list_part_aux head=128 nbr=1
+get_geometry_from_list_part_aux head=240 nbr=1
+get_geometry_from_list_part_aux head=255 nbr=2
+Current partition structure:
+ 1 * HPFS - NTFS              0   1  1 38912 254 63  625137282
+
+search_part()
+Disk /dev/sdc - 320 GB / 298 GiB - CHS 38913 255 63
+NTFS at 0/1/1
+filesystem size           625137282
+sectors_per_cluster       8
+mft_lcn                   786432
+mftmirr_lcn               39071080
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS              0   1  1 38912 254 63  625137282
+     NTFS, blocksize=4096, 320 GB / 298 GiB
+get_geometry_from_list_part_aux head=255 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=1
+get_geometry_from_list_part_aux head=16 nbr=1
+get_geometry_from_list_part_aux head=32 nbr=1
+get_geometry_from_list_part_aux head=64 nbr=1
+get_geometry_from_list_part_aux head=128 nbr=1
+get_geometry_from_list_part_aux head=240 nbr=1
+get_geometry_from_list_part_aux head=255 nbr=2
+
+Results
+   * HPFS - NTFS              0   1  1 38912 254 63  625137282
+     NTFS, blocksize=4096, 320 GB / 298 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 625137282 linear /dev/sdc 63" | dmsetup create test0
+
+interface_write()
+ 1 * HPFS - NTFS              0   1  1 38912 254 63  625137282
